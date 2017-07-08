@@ -1,0 +1,92 @@
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  font-size: 30px !important;
+  color: black !important;
+}
+.row{
+	margin-right: 0 !important;
+	margin-left: 0 !important
+}
+.navbar-default{
+	background-color: white !important;
+	border: none !important;
+}
+
+/* DEMO example styles for logo image */
+.navbar-brand {
+  padding: 0px;
+}
+/*.navbar-brand>img {
+  height: 100%;
+  width: auto;
+  padding: 7px 14px;
+}
+*/
+.navbar *{
+	margin-top: 3px;
+    font-size: 22px;
+    color: #000;
+}
+.promo-pic{
+	width: 100%;
+	height: 400px;
+	
+}
+.container-fluid{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.products h2,.contact h2{
+	font-weight: 700;
+}
+.products,.contact-details{
+	margin-left: 30px !important;
+	margin-right: 30px !important;
+}
+.items{
+	width: 100%;
+	height: 400px;
+}
+.contact-details{
+	
+	height: 300px;
+
+}
+@media only screen and (max-width: 767px) {
+    .navbar *{
+    font-size: 18px;
+   
+}
+.products,.contact-details{
+	margin-left: 15px !important;
+	margin-right: 15px !important;
+}
+    
+}
+
+@media only screen and (min-width: 768px) {
+    #left {
+        position: absolute; 
+        left: 21%;
+    }
+  
+    #right {
+        position: absolute; 
+        right: 22%;
+    }
+    
+}
+@media only screen and (min-width: 992px) {
+    #left {
+        position: absolute; 
+        left: 26%;
+    }
+  
+    #right {
+        position: absolute; 
+        right: 27%;
+    }
+    
+}
