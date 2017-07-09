@@ -31,8 +31,11 @@
 }
 .promo-pic{
 	width: 100%;
-	height: 400px;
 	
+	
+}
+.pic img{
+  display: inline !important;
 }
 .container-fluid{
 	padding-left: 0 !important;
@@ -42,18 +45,29 @@
 	font-weight: 700;
 }
 .products,.contact-details{
+  height: auto !important;
 	margin-left: 30px !important;
 	margin-right: 30px !important;
 }
 .items{
 	width: 100%;
-	height: 400px;
+  margin-bottom: 20px ;
+	height: auto;
 }
-.contact-details{
-	
-	height: 300px;
+.contact{
+	background-color: ghostwhite;
+	height: auto;
 
 }
+.static-btn{
+  position: fixed !important;
+  right: 2%;
+  bottom: 1%;
+}
+#up{
+  float: right;
+}
+
 @media only screen and (max-width: 767px) {
     .navbar *{
     font-size: 18px;

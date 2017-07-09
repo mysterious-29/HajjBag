@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="HajjBagsApp">
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hajj Bags</title>
 	<!-- <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css"> -->
@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="JS/angular.min.js"></script>
 	<script src="JS/app.js"></script>
 </head>
-<body>
+<body id="home">
 	
 	<header>
 		<div class="container">
@@ -40,29 +40,87 @@
 							<li id="right" class=""><a href="#contact">Contact Us</a></li>
 						</ul>
 					</div>
-					<!--/.nav-collapse -->
 				</div>
-				<!--/.container-fluid -->
 			</nav>
 		</div>
 	</header>
 	<div class="container-fluid">
-		<div class="row promo-pic " style="background-color: gray;"></div>
+		<div class="row promo-pic " ">
+			<div class="col-md-12 text-center pic ">
+				<img class="img-responsive"  src="Images/desert.jpg" alt="hajjBagImage">
+			</div>
+		</div>
 		<div id="products" class="products row">
 			<div class="row">
 				<h2 class="text-center col-md-12">Our Products</h2>
 			</div>
 			<div class="row">
-				<div class="items col-md-6 col-sm-6 col-xs-12" style="background-color: green"></div>
-				<div class="items col-md-6 col-sm-6 col-xs-12" style="background-color: yellow"></div>
+				<div class="items col-md-6 col-sm-6 col-xs-12" >
+					<h3 class="text-center col-md-12">Basic Bag</h3>
+					<div class="item-img col-md-7">
+						<img class="img-responsive" src="Images/Basic%20Bag1.png">
+					</div>
+					<div class="item-desc col-md-5">
+						<label class= for="price">Price: $1100</label><br>
+						<label for="description">Description:</label>
+						<span> This bag will contain all basic things which will be needful on Hajj trip.</span>
+					</div>
+				</div>
+				<div class="items col-md-6 col-sm-6 col-xs-12" >
+					<h3 class="text-center col-md-12">Premium Bag</h3>
+					<div class="item-img col-md-7">
+						<img class="img-responsive" src="Images/Premium%20Bag1.png">
+					</div>
+					<div class="item-desc col-md-5">
+						<label for="price">Price: $1500</label><br>
+						<label for="description">Description:</label>
+						<span> This bag will contain all basic things plus few luxury item which will be make your Hajj more enjoying.</span>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="contact" class="contact row">
 			<div class="row">
 				<h2 class="text-center col-md-12">Contact Us</h2>
 			</div>
-			<div class="row contact-details" style="background-color: cyan;">
+			<div class="row contact-details" >
+				<div class="col-md-12">
+					<h4 class="text-center">Please Write us your query on <a href="mailto:ABC@hajjbags.com">ABC@hajjbags.com</a></h4>
 				
+					<h4 class="text-center">Or you can directly submit your query to us: </h4>
+					<div class="col-md-2"></div>
+					<div class="col-md-8 col-sm-12">
+						<form name="queryForm" class="" role="form"  novalidate>
+							<div class="form-group col-md-12">
+								<label class="label-control col-md-2" for="name">Name: </label>
+								<div class="col-md-10">
+								<input type="text" name="name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group col-md-12">
+								<label for="name" class="label-control col-md-2">Email: </label>
+								<div class="col-md-10">
+								<input type="email" name="email" class="form-control">
+								</div>
+							</div>
+							<div class="form-group col-md-12">
+								<label for="name" class="label-control col-md-2">Query: </label>
+								<div class="col-md-10">
+								<textarea style="max-width: 100%;" class="form-control" name="query"></textarea> </div>
+							</div>
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-success" style="float:right; margin-right: 15px;">Submit Query</button>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-11 col-sm-10 col-xs-8"></div>
+			<div class="static-btn col-md-1 col-sm-2 col-xs-4">
+				<a id="up" class="btn btn-primary"  href="#home">Home</a>	
 			</div>
 		</div>
 
