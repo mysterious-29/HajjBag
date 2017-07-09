@@ -46,8 +46,8 @@
 	</header>
 	<div class="container-fluid">
 		<div class="row promo-pic " ">
-			<div class="col-md-12 text-center pic ">
-				<img class="img-responsive"  src="Images/desert.jpg" alt="hajjBagImage">
+			<div class="col-md-12 text-center pic " style="padding: 0">
+				<img class="img-responsive"  src="Images/desert2.jpg" alt="hajjBagImage">
 			</div>
 		</div>
 		<div id="products" class="products row">
@@ -57,24 +57,50 @@
 			<div class="row">
 				<div class="items col-md-6 col-sm-6 col-xs-12" >
 					<h3 class="text-center col-md-12">Basic Bag</h3>
-					<div class="item-img col-md-7">
+					<div class="item-img col-md-6">
 						<img class="img-responsive" src="Images/Basic%20Bag1.png">
 					</div>
-					<div class="item-desc col-md-5">
-						<label class= for="price">Price: $1100</label><br>
-						<label for="description">Description:</label>
-						<span> This bag will contain all basic things which will be needful on Hajj trip.</span>
+					<div class="item-desc col-md-6">
+						<label class="col-md-12 col-sm-12 col-xs-12" for="name">Basic Hajj Bag</label>
+						<label class="col-md-12 col-sm-12 col-xs-12" for="price">Price: $1100</label>
+						<label class="col-md-4 col-xs-4"  for="quantity">Quantity:</label>
+						<div class="col-md-5 col-xs-4">
+							<input type="number" name="quantity" class="form-control" min="1" value="1">
+						</div>
+						<div class="col-md-3 col-xs-4" ></div>
+						<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 7px;">
+						<button class="btn btn-info	">Add to cart</button>
+						<button class="btn btn-success">Buy Now</button>
+						</div>
+						<label class="col-md-12 col-sm-12 col-xs-12" for="description">Description:</label>
+						<div class="col-md-12 col-sm-12 col-xs-12">This bag will contain all basic things which will be needful on Hajj trip.
+						</div>
+
 					</div>
+
+
 				</div>
-				<div class="items col-md-6 col-sm-6 col-xs-12" >
+
+				<div id="item2" class="items col-md-6 col-sm-6 col-xs-12" >
 					<h3 class="text-center col-md-12">Premium Bag</h3>
-					<div class="item-img col-md-7">
+
+					<div class="item-img col-md-6">
 						<img class="img-responsive" src="Images/Premium%20Bag1.png">
 					</div>
-					<div class="item-desc col-md-5">
-						<label for="price">Price: $1500</label><br>
-						<label for="description">Description:</label>
-						<span> This bag will contain all basic things plus few luxury item which will be make your Hajj more enjoying.</span>
+					<div class="item-desc col-md-6">
+					<label class="col-md-12 col-sm-12 col-xs-12" for="name">Premium Hajj Bag</label>
+						<label class="col-md-12 col-sm-12 col-xs-12" for="price">Price: $1500</label>
+						<label class="col-md-4 col-xs-4" for="quantity">Quantity:</label>
+						<div class="col-md-5 col-xs-4">
+							<input type="number" name="quantity" class="form-control" min="1" value="1">
+						</div>
+						<div class="col-md-3 col-xs-4" ></div>
+						<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 7px;">
+						<button class="btn btn-info	">Add to cart</button>
+						<button class="btn btn-success">Buy Now</button>
+						</div>
+						<label class="col-md-12 col-sm-12 col-xs-12" for="description">Description:</label>
+						<div class="col-md-12 col-sm-12 col-xs-12"> This bag will contain all basic things plus few luxury item which will be make your Hajj more enjoying.</div>
 					</div>
 				</div>
 			</div>
@@ -86,7 +112,7 @@
 			<div class="row contact-details" >
 				<div class="col-md-12">
 					<h4 class="text-center">Please Write us your query on <a href="mailto:ABC@hajjbags.com">ABC@hajjbags.com</a></h4>
-				
+
 					<h4 class="text-center">Or you can directly submit your query to us: </h4>
 					<div class="col-md-2"></div>
 					<div class="col-md-8 col-sm-12">
@@ -94,37 +120,37 @@
 							<div class="form-group col-md-12">
 								<label class="label-control col-md-2" for="name">Name: </label>
 								<div class="col-md-10">
-								<input type="text" name="name" class="form-control">
+									<input type="text" name="name" class="form-control">
 								</div>
 							</div>
 							<div class="form-group col-md-12">
 								<label for="name" class="label-control col-md-2">Email: </label>
 								<div class="col-md-10">
-								<input type="email" name="email" class="form-control">
+									<input type="email" name="email" class="form-control">
 								</div>
 							</div>
 							<div class="form-group col-md-12">
 								<label for="name" class="label-control col-md-2">Query: </label>
 								<div class="col-md-10">
-								<textarea style="max-width: 100%;" class="form-control" name="query"></textarea> </div>
-							</div>
-							<div class="col-md-12">
-								<button type="submit" class="btn btn-success" style="float:right; margin-right: 15px;">Submit Query</button>
-							</div>
-						</form>
+									<textarea style="max-width: 100%;" class="form-control" name="query"></textarea> </div>
+								</div>
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-success" style="float:right; margin-right: 15px;">Submit Query</button>
+								</div>
+							</form>
+						</div>
+						<div class="col-md-2"></div>
 					</div>
-					<div class="col-md-2"></div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-11 col-sm-10 col-xs-8"></div>
-			<div class="static-btn col-md-1 col-sm-2 col-xs-4">
-				<a id="up" class="btn btn-primary"  href="#home">Home</a>	
+			<div class="row">
+				<div class="col-md-11 col-sm-10 col-xs-8"></div>
+				<div class="static-btn col-md-1 col-sm-2 col-xs-4">
+					<a id="up" class=""  href="#home" title="Go to top"><img src="Images/up2.png"></a>	
+				</div>
 			</div>
+
 		</div>
 
-	</div>
-
-</body>
-</html>
+	</body>
+	</html>

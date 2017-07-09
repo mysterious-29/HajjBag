@@ -61,12 +61,13 @@
 }
 .static-btn{
   position: fixed !important;
-  right: 2%;
+  right: 1%;
   bottom: 1%;
 }
 #up{
   float: right;
 }
+
 
 @media only screen and (max-width: 767px) {
     .navbar *{
@@ -76,6 +77,9 @@
 .products,.contact-details{
 	margin-left: 15px !important;
 	margin-right: 15px !important;
+}
+.items{
+  border-top: 1px solid lightsteelblue;
 }
     
 }
@@ -90,6 +94,9 @@
         position: absolute; 
         right: 22%;
     }
+    #navbar li:hover{
+  border-bottom: 2px solid green;
+}
     
 }
 @media only screen and (min-width: 992px) {
@@ -101,6 +108,9 @@
     #right {
         position: absolute; 
         right: 27%;
+    }
+    #item2{
+          border-left: 1px solid #c1c0c0;
     }
     
 }
