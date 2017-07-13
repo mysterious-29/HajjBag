@@ -57,7 +57,8 @@
 	margin-right: 30px !important;
 }
 hr{
-  margin-top: 0 !important
+  margin-top: 0 !important;
+  border-top: 2px solid #09d4d4 !important;
 }
 .items{
 	width: 100%;
