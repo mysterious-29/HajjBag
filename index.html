@@ -44,13 +44,13 @@
 						<ul class="nav navbar-nav navbar-left">
 							<li id="left" class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu " id="prod-dropdown">
             <li ng-repeat="product in products"><a  ng-click="showItemPage(product)">{{product.productName}}</a></li>
           </ul>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li id="right" class=""><a href="#!/home#contact">Contact Us</a></li>
+							<li id="right" class=""><a  ng-click="scrollTo('contact')">Contact Us</a></li>
 						</ul>
 					</div>
 				</div>

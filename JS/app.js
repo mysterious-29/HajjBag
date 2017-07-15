@@ -50,7 +50,7 @@ this.getChoice=function(){
 		// 	return this.itemObj;
 		// }
 	}])
-	.controller('AppController',['$scope','dataShare','$location',function($scope,dataShare,$location){
+	.controller('AppController',['$scope','dataShare','$location','$anchorScroll',function($scope,dataShare,$location,$anchorScroll){
 		var promise=dataShare.getProducts();
 		promise.then(function(response){
 			$scope.products=response.data;
@@ -61,6 +61,18 @@ this.getChoice=function(){
 			dataShare.setChoice(product);
 			$location.path('/item');
 		}
+		$scope.scrollTo = function(id) {
+			if($location.url()==='/item'){
+				$location.path('/home')
+			}
+			console.log($location.url())
+  // Pass the 'id' as the parameter here, the page will scroll 
+  // to the correct place and the URL will remain intact.
+  debugger
+  $anchorScroll(id);
+}
+	
+
 
 	}])
 })();
