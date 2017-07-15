@@ -1,7 +1,12 @@
-angular.module('HajjBagsApp').controller('HajjAppController', ['$scope','dataShare','$location', function($scope,dataShare,$location){
+angular.module('HajjBagsApp').controller('HajjAppController', ['$scope','dataShare','$location','$http', function($scope,dataShare,$location,$http){
 	$scope.ShowItem=function(){
 				dataShare.SetData($scope.item);
 			$location.path('/item');
 			$scope.item	={}
 	}
+
+	// $scope.GetProducts=function(){
+		
+	// }
+	//$scope.GetProducts()
 }])

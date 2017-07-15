@@ -25,7 +25,7 @@
 	<script src="JS/itemController.js"></script>
 
 </head>
-<body id="home" >
+<body id="home" ng-controller="AppController">
 	
 	<header>
 		<div class="container">
@@ -42,7 +42,12 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse text-center">
 						<ul class="nav navbar-nav navbar-left">
-							<li id="left" class=""><a href="#!/home#products" >Products</a></li>
+							<li id="left" class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li ng-repeat="product in products"><a  ng-click="showItemPage(product)">{{product.productName}}</a></li>
+          </ul>
+							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li id="right" class=""><a href="#!/home#contact">Contact Us</a></li>

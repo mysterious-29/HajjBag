@@ -20,6 +20,15 @@
 	background-color: white !important;
 	border: none !important;
 }
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+.dropdown ul{
+      margin-top: -1px;
+    /* border-top-color: #09d4dc; */
+    border-top: 2px solid #09d4dc;
+    cursor: pointer;
+}
 
 /* DEMO example styles for logo image */
 .navbar-brand {
@@ -35,6 +44,9 @@
 	margin-top: 3px;
     font-size: 22px;
     color: #000;
+}
+hr{
+  color: #09d4d4
 }
 .promo-pic{
 	width: 100%;

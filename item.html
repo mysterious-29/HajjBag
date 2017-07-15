@@ -1,2 +1,105 @@
+<style type="text/css">
+	.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+.nav-tabs {
+    border-bottom: 1px solid #09d4d4 ;
+}
+	.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+		border: 1px solid #09dce6;
+		
+		    border-bottom-color:transparent;
+		    font-weight: bold;
+	}
+	/*ul.nav-tabs li a{
+    background-color: #eee;
+    margin-right: 0;
+}*/
+#myTab.nav-tabs > li > a {
+	padding: 8px 16px;
+	margin:0;
+    margin-right: -3px;
+    color: black;
+}
+.item-category ul{
+	font-weight: bold;
+	font-size: 18px;
+}
+.item-category ul ul{
+	font-size: 15px
+}
+.tab-content{
+	margin-top: 15px;
+}
+
+h2{
+	margin-bottom: 20px;
+}
+ul{
+	    -webkit-padding-start:20px;
+}
+</style>
+
 <hr>
-<div>{{item}}</div>
+<div class="row">
+	<div class="row"> 
+		<div class="col-md-6 col-sm-6" style="height: 500px; background-color: blue">
+
+		</div>
+		<div class="col-md-6 col-sm-6" style="height: 500px; background-color: brown">
+		</div>
+	</div>
+
+	<div class="row">
+		<h2 class="text-center col-md-12 col-sm-12 col-xs-12"> Bag Contains:</h2>
+		<ul class="nav nav-tabs col-md-12 col-sm-12" id="myTab">
+			<li class="active"><a data-target="#men" data-toggle="tab">Men</a></li>
+			<li><a data-target="#women" data-toggle="tab">Women</a></li>
+			<li><a data-target="#children" data-toggle="tab">Children</a></li>
+		</ul>
+
+		<div class="tab-content item-category col-md-12 col-sm-12">
+			<div class="tab-pane active" id="men">
+				<div class="col-md-2" ng-repeat="category in items.male">
+					<ul class="">
+						<li>{{category.category_name}}
+							<ul>
+								<li ng-repeat="item in category.items">{{item}}</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-pane" id="women">
+			<div class="col-md-2" ng-repeat="category in items.female">
+					<ul>
+						<li>{{category.category_name}}
+							<ul>
+								<li ng-repeat="item in category.items">{{item}}</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-pane" id="children">
+				<div class="col-md-2" ng-repeat="category in items.male">
+					<ul>
+						<li>{{category.category_name}}
+							<ul>
+								<li ng-repeat="item in category.items">{{item}}</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -6,22 +6,16 @@
     
 
     $stateProvider
-
-        // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/home',
             templateUrl: 'landingPage.html',
             controller:'HajjAppController'
         })
-
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('products', {
         	url: '/item',
             templateUrl: 'item.html',
             controller:'ItemController'
-            // we'll get to this in a bit       
         });
-        
         //$ locationProvider.html5Mode(true).hashPrefix('!');
     })
 	// .controller('HajjAppController', ['$scope','dataShare','$location', function($scope,dataShare,$location){
@@ -33,13 +27,40 @@
 	// 	}
 		
 	// }])
-	.service('dataShare', [function(obj){
-		var itemObj={}
-		this.SetData=function(){
-			this.itemObj=obj;
+	.service('dataShare', ['$http',function($http){
+		var productObj={}
+		this.getProducts=function(){
+		return $http({'url':'http://192.168.0.101:9005/Hajj/files/RestProductController.php?view=all',
+				'method':'get',
+				"headers":{ 'Content-Type': 'application/x-www-form-urlencoded' ,'Accept':'Access-Control-Allow-Origin'}}
+			)
+			//return this.productData;
+}
+this.setChoice=function(data){
+	productObj=data;
+}
+this.getChoice=function(){
+	return productObj;
+}
+
+		// this.SetData=function(){
+		// 	this.itemObj=obj;
+		// }
+		// this.GetData=function(){
+		// 	return this.itemObj;
+		// }
+	}])
+	.controller('AppController',['$scope','dataShare','$location',function($scope,dataShare,$location){
+		var promise=dataShare.getProducts();
+		promise.then(function(response){
+			$scope.products=response.data;
+		console.log($scope.products);
+
+		})
+		$scope.showItemPage=function(product){
+			dataShare.setChoice(product);
+			$location.path('/item');
 		}
-		this.GetData=function(){
-			return this.itemObj;
-		}
+
 	}])
 })();
