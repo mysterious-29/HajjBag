@@ -30,10 +30,11 @@
 	.service('dataShare', ['$http',function($http){
 		var productObj={}
 		this.getProducts=function(){
-		return $http({'url':'http://192.168.0.101:9005/Hajj/files/RestProductController.php?view=all',
-				'method':'get',
-				"headers":{ 'Content-Type': 'application/x-www-form-urlencoded' ,'Accept':'Access-Control-Allow-Origin'}}
-			)
+			return true;
+		// return $http({'url':'http://192.168.0.101:9005/Hajj/files/RestProductController.php?view=all',
+		// 		'method':'get',
+		// 		"headers":{ 'Content-Type': 'application/x-www-form-urlencoded' ,'Accept':'Access-Control-Allow-Origin'}}
+		// 	)
 			//return this.productData;
 }
 this.setChoice=function(data){
@@ -51,12 +52,22 @@ this.getChoice=function(){
 		// }
 	}])
 	.controller('AppController',['$scope','dataShare','$location','$anchorScroll',function($scope,dataShare,$location,$anchorScroll){
-		var promise=dataShare.getProducts();
-		promise.then(function(response){
-			$scope.products=response.data;
-		console.log($scope.products);
+		// var promise=dataShare.getProducts();
+		// promise.then(function(response){
+		// 	$scope.products=response.data;
+		// console.log($scope.products);
 
-		})
+		// })
+		$scope.products	=[{
+				productId:1,
+				productName:'Basic',
+				productDesc:'This bag will contain all basic things which will be needful on Hajj trip.'
+			},
+			{
+				productId:2,
+				productName:'Premium',
+				productDesc:'This bag will contain all basic things plus few luxury item which will make your Hajj more enjoying.'
+			}]
 		$scope.showItemPage=function(product){
 			dataShare.setChoice(product);
 			$location.path('/item');

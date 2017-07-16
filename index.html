@@ -9,13 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="CSS/styles.css">
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">	 -->
 	<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
-
-
-
-	<script
-	src="https://code.jquery.com/jquery-2.1.3.js"
-	integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8="
-	crossorigin="anonymous"></script>	
+	<script type="text/javascript"	src="JS/jquery-3.2.1.min.js"></script>	
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>	
 	<script type="text/javascript" src="JS/angular.min.js"></script>
@@ -26,7 +20,6 @@
 
 </head>
 <body id="home" ng-controller="AppController">
-	
 	<header>
 		<div class="container">
 			<nav class="navbar navbar-default">
@@ -44,9 +37,9 @@
 						<ul class="nav navbar-nav navbar-left">
 							<li id="left" class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
-          <ul class="dropdown-menu " id="prod-dropdown">
-            <li ng-repeat="product in products"><a  ng-click="showItemPage(product)">{{product.productName}}</a></li>
-          </ul>
+								<ul class="dropdown-menu " id="prod-dropdown">
+									<li ng-repeat="product in products"><a  ng-click="showItemPage(product)">{{product.productName}}</a></li>
+								</ul>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">

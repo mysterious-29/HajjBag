@@ -1,0 +1,11 @@
+# Turn rewrite engine on
+#Header set Access-Control-Allow-Origin "*"
+#apachectl -t
+
+Options +FollowSymlinks
+RewriteEngine on
+RewriteBase /Hajj/files/
+
+# map neat URL to internal URL
+RewriteRule ^product/list/$   RestProductController.php?view=all [nc,qsa]
+RewriteRule ^product/list/([0-9]+)/$   RestProductController.php?view=single&id=$1 [nc,qsa]

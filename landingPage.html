@@ -20,7 +20,8 @@ function topFunction() {
 <div>	
 	<div class="row promo-pic " >
 		<div class="col-md-12 text-center pic " style="padding: 0">
-			<img class="img-responsive"  src="Images/desert2.jpg" alt="hajjBagImage">
+			<div class="img-responsive"  id="promo-pic">
+			<img srcset="">
 		</div>
 	</div>
 	<div id="products" class="products row">
@@ -28,13 +29,17 @@ function topFunction() {
 			<h2 class="text-center col-md-12">Our Products </h2>
 		</div>
 		<div class="row">
-			<div class="items col-md-6 col-sm-6 col-xs-12" data-ng-click="ShowItem()">
-				<h3 class="text-center col-md-12">Basic Bag</h3>
+			<div class="items col-md-6 col-sm-6 col-xs-12" ng-repeat="product in products" data-ng-click="ShowItem()">
+				<h3 class="text-center col-md-12">{{product.productName}}</h3>
 				<div class="item-img col-md-6">
-					<img class="img-responsive" src="Images/Basic%20Bag1.png">
+					<picture class="img-responsive">
+  						<source media="(max-width: 567px)" ng-srcset="Images/Mobile/{{product.productId}}.png">
+  						<source media="(min-width: 768px)" ng-srcset="Images/Desktop/{{product.productId}}.png">
+  						<img ng-src="Images/Desktop/{{product.productId}}.png" alt="{{product.productName}} Image" >
+</picture>
 				</div>
 				<div class="item-desc col-md-6" ">
-					<label class="col-md-12 col-sm-12 col-xs-12" for="name">Basic Hajj Bag</label>
+					<label class="col-md-12 col-sm-12 col-xs-12" for="name">{{product.productName}} Hajj Bag</label>
 					<label class="col-md-12 col-sm-12 col-xs-12" for="price">Price: $1100</label>
 					<label class="col-md-4 col-xs-4"  for="quantity">Quantity:</label>
 					<div class="col-md-5 col-xs-4">
@@ -48,13 +53,9 @@ function topFunction() {
 					<label class="col-md-12 col-sm-12 col-xs-12" for="description">Description:</label>
 					<div class="col-md-12 col-sm-12 col-xs-12">This bag will contain all basic things which will be needful on Hajj trip.
 					</div>
-
 				</div>
-
-
 			</div>
-
-			<div id="item2" class="items col-md-6 col-sm-6 col-xs-12" >
+			<!-- <div id="item2" class="items col-md-6 col-sm-6 col-xs-12" >
 				<h3 class="text-center col-md-12">Premium Bag</h3>
 
 				<div class="item-img col-md-6">
@@ -75,7 +76,7 @@ function topFunction() {
 					<label class="col-md-12 col-sm-12 col-xs-12" for="description">Description:</label>
 					<div class="col-md-12 col-sm-12 col-xs-12"> This bag will contain all basic things plus few luxury item which will be make your Hajj more enjoying.</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div id="contact" class="contact row">
@@ -85,7 +86,6 @@ function topFunction() {
 		<div class="row contact-details" >
 			<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
 				<h4 class="text-center">Please Write us your query on <a href="mailto:ABC@hajjbags.com">ABC@hajjbags.com</a></h4>
-
 				<h4 class="text-center">Or you can directly submit your query to us: </h4>
 				<div class="col-md-2"></div>
 				<div class="col-md-8 col-sm-12">
@@ -122,7 +122,5 @@ function topFunction() {
 				<a id="up" class=""  onclick="topFunction()"  title="Go to top"><img src="Images/up2.png"></a>	
 			</div>
 		</div>
-
 	</div>
-
 </div>
