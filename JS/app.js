@@ -70,7 +70,9 @@ this.getChoice=function(){
 			}]
 		$scope.showItemPage=function(product){
 			dataShare.setChoice(product);
+			$scope.$broadcast('selectionChanged',product);
 			$location.path('/item');
+			
 		}
 		$scope.scrollTo = function(id) {
 			if($location.url()==='/item'){
@@ -79,7 +81,7 @@ this.getChoice=function(){
 			console.log($location.url())
   // Pass the 'id' as the parameter here, the page will scroll 
   // to the correct place and the URL will remain intact.
-  debugger
+
   $anchorScroll(id);
 }
 	

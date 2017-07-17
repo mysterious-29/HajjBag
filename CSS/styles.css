@@ -43,9 +43,7 @@
     font-size: 22px;
     color: #000;
 }
-hr{
-  color: #09d4d4
-}
+
 .promo-pic{
 	width: 100%;
 }
@@ -95,9 +93,22 @@ hr{
 	height: auto;
 
 }
+.btn-success.active, .btn-success.focus, .btn-success:active, .btn-success:focus, .btn-success:hover, .open>.dropdown-toggle.btn-success {
+    color: #fff;
+    background-color: #09d4d4 !important;
+    border-color: #08d4d4 !important;
+}
+.btn-success{
+  background-color: #26c3c3  !important;
+    border-color: #06d4d4 !important;
+}
+.form-control:focus{
+  border-color: #09d4d4 !important;
+}
+.has-error .form-control {
+    border-color: #a94442 !important;
 
-
-
+}
 .contact-details{
   margin-bottom: 20px;
 }

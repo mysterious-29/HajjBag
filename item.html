@@ -18,89 +18,124 @@
 		border-bottom-color:transparent;
 		font-weight: bold;
 	}
-	/*ul.nav-tabs li a{
+/*ul.nav-tabs li a{
     background-color: #eee;
     margin-right: 0;
-  }*/
-  #myTab.nav-tabs > li > a {
-  	padding: 8px 16px;
-  	margin:0;
-  	margin-right: -3px;
-  	color: black;
-  }
-  .item-category ul{
-  	font-weight: bold;
-  	font-size: 18px;
-  }
-  .item-category ul ul{
-  	font-size: 15px
-  }
-  .tab-content{
-  	margin-top: 15px;
-  }
+}*/
+#myTab.nav-tabs > li > a {
+	padding: 8px 16px;
+	margin:0;
+	margin-right: -3px;
+	color: black;
+}
+.item-category ul{
+	font-weight: bold;
+	font-size: 18px;
+}
+.item-category ul ul{
+	font-size: 15px
+}
+.tab-content{
+	margin-top: 15px;
+}
+.prod-container{
+	/*border-bottom: 2px solid #09d4d4;*/
+	border-top: 2px solid #09d4d4
+}
 
-  h2{
-  	margin-bottom: 20px;
-  }
-  ul{
-  	-webkit-padding-start:20px;
-  }
+h2{
+	margin-bottom: 20px;
+}
+ul{
+	-webkit-padding-start:20px;
+}
+.img-responsive{
+	display: inline-block;
+}
+.address-area{
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+.form-group label:after{
+	content: '*';
+	color: #a94442;
+}
+.not-required:after{
+	content: none !important;
+}
+.item-desc > div{
+	margin-bottom: 5px;
+}
 </style>
 
-<hr>
 <div class="row">
-	<div class="row"> 
-		<div class="col-md-6 col-sm-6" style="height: 500px; background-color: blue">
+	<div class="row prod-container"> 
+		<h3 class="text-center col-md-12">{{selProduct.productName}}</h3>
+		<div class="col-md-6 col-sm-6" style="height: 500px">
+			
+			<div class="item-img col-md-12 text-center">
+				<picture class="">
+					<source media="(max-width: 567px)" ng-srcset="Images/Mobile/{{selProduct.productId}}.png" class="img-responsive" />
+					<source media="(min-width: 768px)" ng-srcset="Images/Desktop/{{selProduct.productId}}.png" class="img-responsive" />
+					<img class="img-responsive" ng-src="Images/Desktop/{{selProduct.productId}}.png" alt="{{selProduct.productName}} Image" />
+				</picture>
+			</div>
 
 		</div>
 		<div class="col-md-6 col-sm-6" style="height: 500px;">
-			<body>
-				<div align="center">
-					<div class="col-sm-6">
-						<!-- FORM ============ -->
-						
-						<form name="userForm" ng-submit="submitForm()" novalidate>
+			<div class="item-desc col-md-12" >
+				<label class="col-md-12 col-sm-12 col-xs-12" for="name" style="font-size: 1.3em;">{{selProduct.productName}} Hajj Bag</label>
+				<label class="col-md-12 col-sm-12 col-xs-12" for="availability">Available for Men, Women and Children</label>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<label class="col-md-2 col-md-offset-4 col-sm-offset-4 col-sm-2"  for="quantity">Quantity</label>
+					<div class="col-md-6 col-sm-6"></div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+				<label class="col-sm-4 col-md-4 col-xs-5" for="price">Price for Men: {{itemPrices.male}}</label>
+				<div class="col-md-2 col-xs-4 col-sm-3">
+					<input type="number" name="quantity" ng-model="maleItemQty" class="form-control" min="1" value="1">
+				</div>
+				<!-- <div class="col-md-2 col-sm-2 " >
+					<button class="btn btn-info	add-btn" ng-click="AddToCart(1)">Add to cart</button>
+				</div> -->
+				<div class="col-sm-3 col-md-4"></div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+				<label class="col-sm-4 col-md-4 col-xs-5" for="price">Price for Women: {{itemPrices.female}}</label>
+				<div class="col-md-2 col-xs-4 col-sm-3">
+					<input type="number" name="quantity" ng-model="femaleItemQty" class="form-control" min="1" value="1">
+				</div>
+				<!-- <div class="col-md-2 col-sm-2 " >
+					<button class="btn btn-info	add-btn" ng-click="AddToCart(2)">Add to cart</button>
+				</div> -->
+				<div class="col-sm-3 col-md-4"></div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+				<label class="col-sm-4 col-md-4 col-xs-5" for="price">Price for Children: {{itemPrices.child}}</label>
+				<div class="col-md-2 col-xs-4 col-sm-3">
+					<input type="number" name="quantity" ng-model="childItemQty" class="form-control" min="1" value="1">
+				</div>				
+				<!-- <div class="col-md-2 col-sm-2 " >
+					<button class="btn btn-info	add-btn" ng-click="AddToCart(3)">Add to cart</button>
+				</div> -->
+				<div class="col-sm-3 col-md-4"></div>
+				</div>
+				<!-- <div class="col-md-3 col-xs-4" ></div>  -->
+				<div class="col-md-12 col-sm-12 col-xs-12">
+				<label>Total Quantity: Men Bags:{{maleItemQty}}, Women Bags: {{femaleItemQty}}, Children Bags: {{childItemQty}}</label>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+				<button class="btn btn-success buy-btn" ng-disabled="totalQty=0 || totalQty<0" ng-click="BuyNow()">Buy Now</button>
+				</div>
+				<label class="col-md-12 col-sm-12 col-xs-12" for="description">Description:</label>
+				<div class="col-md-12 col-sm-12 col-xs-12">{{selProduct.productDesc}}
 
-							<!-- NAME -->
-							<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && userForm.name.$touched }">
-								<label>Name</label>
-								<input type="text" name="name" class="form-control" ng-model="user.name" required>
-								<p ng-show="userForm.name.$invalid && userForm.name.$touched" class="help-block">Your name is required.</p>
-							</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 
-							<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && userForm.email.$touched }">
-								<label>Email</label>
-								<input type="email" name="email" class="form-control" ng-model="user.email">
-								<p ng-show="userForm.email.error.$required && userForm.email.$touched" class="help-block">You email is required.</p>
-								<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-							</div>
-
-							<div class="form-group" ng-class="{ 'has-error' : userForm.mobile.$invalid && userForm.mobile.$touched }">
-								<label>Mobile</label>
-								<input type="number" name="mobile" class="form-control" ng-model="user.mobile">
-								<p ng-show="userForm.mobile.$invalid && userForm.mobile.$touched" class="help-block">Your name is required.</p>
-							</div>
-
-							<div class="form-group" ng-class="{ 'has-error' : userForm.mobile.$invalid && userForm.mobile.$touched }">
-								<label>Address</label>
-								<select id="country" name="country"></select>
-								<br />
-								State:
-								<select name="state" id="state"></select>
-								<input type="text" name="address1" class="form-control" ng-model="user.add1">
-								<input type="text" name="address2" class="form-control" ng-model="user.add2">
-								<input type="text" name="city" class="form-control" ng-model="user.city">
-								<input type="text" name="pin" class="form-control" ng-model="user.pin">			       
-								<p ng-show="userForm.mobile.$invalid && userForm.mobile.$touched" class="help-block">Your name is required.</p>
-							</div>
-							
-
-							<button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
-							
-						</form>
-					</div>
-					
-					<script language="javascript">
+	<script language="javascript">
 					// Countries
 					var country_arr = new Array("Afghanistan", "Albania", "Algeria", "American Samoa", "Angola", "Anguilla", "Antartica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Island", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czeck Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia, The", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City)", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Ireland, Northern", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Man, Isle of", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcaim Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romainia", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Scotland", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and South Sandwich Islands", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Tobago", "Toga", "Tokelau", "Tonga", "Trinidad", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "USA", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands", "Wales", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
 
@@ -369,18 +404,18 @@
 
 						var stateElement = document.getElementById(stateElementId);
 
-					    stateElement.length = 0; // Fixed by Julian Woods
-					    stateElement.options[0] = new Option('Select State', '');
-					    stateElement.selectedIndex = 0;
+						stateElement.length = 0; 
+						stateElement.options[0] = new Option('Select State', '');
+						stateElement.selectedIndex = 0;
 
-					    var state_arr = s_a[selectedCountryIndex].split("|");
+						var state_arr = s_a[selectedCountryIndex].split("|");
 
-					    for (var i = 0; i < state_arr.length; i++) {
-					    	stateElement.options[stateElement.length] = new Option(state_arr[i], state_arr[i]);
-					    }
-					  }
+						for (var i = 0; i < state_arr.length; i++) {
+							stateElement.options[stateElement.length] = new Option(state_arr[i], state_arr[i]);
+						}
+					}
 
-					  function populateCountries(countryElementId, stateElementId) {
+					function populateCountries(countryElementId, stateElementId) {
 					    // given the id of the <select> tag as function argument, it inserts <option> tags
 					    var countryElement = document.getElementById(countryElementId);
 					    countryElement.length = 0;
@@ -397,59 +432,151 @@
 					    		populateStates(countryElementId, stateElementId);
 					    	};
 					    }
-					  }
-					  populateCountries("country", "state");
-					</script>
-					<br/>
-					<br/>
-					<br />
-					<br />
+					}
+					populateCountries("country", "state");
+				</script>
+				<br/>
+				<br/>
+				<br />
+				<br />
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<h2 class="text-center col-md-12 col-sm-12 col-xs-12"> Bag Contains:</h2>
+		<ul class="nav nav-tabs col-md-12 col-sm-12" id="myTab">
+			<li class="active"><a data-target="#men" data-toggle="tab">Men</a></li>
+			<li><a data-target="#women" data-toggle="tab">Women</a></li>
+			<li><a data-target="#children" data-toggle="tab">Children</a></li>
+		</ul>
+
+		<div class="tab-content item-category col-md-12 col-sm-12">
+			<div class="tab-pane active" id="men">
+				<div class="col-md-2" ng-repeat="category in items.male">
+					<ul class="">
+						<li>{{category.category_name}}
+							<ul>
+								<li ng-repeat="item in category.items">{{item}}</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-pane" id="women">
+				<div class="col-md-2" ng-repeat="category in items.female">
+					<ul>
+						<li>{{category.category_name}}
+							<ul>
+								<li ng-repeat="item in category.items">{{item}}</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-pane" id="children">
+				<div class="col-md-2" ng-repeat="category in items.child">
+					<ul>
+						<li>{{category.category_name}}
+							<ul>
+								<li ng-repeat="item in category.items">{{item}}</li>
+							</ul>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div ng-if="buyNow" class="row address-area">
+		<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+			
 
-		<div class="row">
-			<h2 class="text-center col-md-12 col-sm-12 col-xs-12"> Bag Contains:</h2>
-			<ul class="nav nav-tabs col-md-12 col-sm-12" id="myTab">
-				<li class="active"><a data-target="#men" data-toggle="tab">Men</a></li>
-				<li><a data-target="#women" data-toggle="tab">Women</a></li>
-				<li><a data-target="#children" data-toggle="tab">Children</a></li>
-			</ul>
+			<!-- FORM ============ -->
 
-			<div class="tab-content item-category col-md-12 col-sm-12">
-				<div class="tab-pane active" id="men">
-					<div class="col-md-2" ng-repeat="category in items.male">
-						<ul class="">
-							<li>{{category.category_name}}
-								<ul>
-									<li ng-repeat="item in category.items">{{item}}</li>
-								</ul>
-							</li>
-						</ul>
+			<form name="userForm" ng-submit="submitForm()" novalidate>
+
+				<!-- NAME -->
+				<div class="form-group col-md-12 col-sm-12" ng-class="{ 'has-error' : userForm.name.$invalid && userForm.name.$touched }">
+					<label class="col-md-2 col-sm-2">Name</label>
+					<div class="col-md-10 col-sm-10">
+						<input type="text" name="name" class="form-control" ng-model="user.name" required>
+						<p ng-show="userForm.name.$invalid && userForm.name.$touched" class="help-block">Your name is required.</p>
 					</div>
 				</div>
-				<div class="tab-pane" id="women">
-					<div class="col-md-2" ng-repeat="category in items.female">
-						<ul>
-							<li>{{category.category_name}}
-								<ul>
-									<li ng-repeat="item in category.items">{{item}}</li>
-								</ul>
-							</li>
-						</ul>
+
+				<div class="form-group col-md-12 col-sm-12" ng-class="{ 'has-error' : userForm.email.$invalid && userForm.email.$touched }">
+					<label class="col-md-2 col-sm-2">Email</label>
+					<div class="col-md-10  col-sm-10">
+						<input type="email" name="email" class="form-control" ng-model="user.email" pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' required>
+						<p ng-show="userForm.email.$error.required && userForm.email.$touched" class="help-block">You email is required.</p>
+						<p ng-show="userForm.email.$error.pattern && !userForm.email.$pristine && !userForm.email.$error.required" class="help-block">Enter a valid email.</p>
 					</div>
 				</div>
-				<div class="tab-pane" id="children">
-					<div class="col-md-2" ng-repeat="category in items.male">
-						<ul>
-							<li>{{category.category_name}}
-								<ul>
-									<li ng-repeat="item in category.items">{{item}}</li>
-								</ul>
-							</li>
-						</ul>
+
+				<div class="form-group col-md-12 col-sm-12" ng-class="{ 'has-error' : userForm.mobile.$invalid && userForm.mobile.$touched }">
+					<label class="col-md-2 col-sm-2">Mobile</label>
+					<div class="col-md-10 col-sm-10">
+						<input placeholder="Enter Mobile Number with country code" type="text" name="mobile" maxlength="12" class="form-control" ng-model="user.mobile" pattern="^\d{12}$" required>
+						<p ng-show="userForm.mobile.$error.required && userForm.mobile.$touched" class="help-block">Your mobile number is required.</p>
+						<p ng-show="userForm.mobile.$error.pattern && !userForm.mobile.$pristine && !userForm.mobile.$error.required" class="help-block">Enter a valid Mobile Number.</p>
 					</div>
 				</div>
+
+				<div class="form-group col-md-12 col-sm-12" ng-class="{ 'has-error' : userForm.address1.$invalid && userForm.address1.$touched }">
+					<label class="col-md-2 col-sm-2">Address Line 1</label>
+					<div class="col-md-10 col-sm-10">
+						<input type="text" name="address1" class="form-control" ng-model="user.add1" required>
+						<p ng-show="userForm.address1.$invalid && userForm.address1.$touched" class="help-block">Address line 1 is required.</p>
+					</div>
+				</div>
+				<div class="form-group col-md-12 col-sm-12" >
+
+					<label 
+					class="col-md-2 col-sm-2 not-required">Address Line 2</label>
+					<div class="col-md-10 col-sm-10">
+						<input type="text" name="address2" class="form-control" ng-model="user.add2">
+					</div>
+				</div>
+				<div class="form-group col-md-12 col-sm-12" ng-class="{ 'has-error' : userForm.city.$invalid && userForm.city.$touched }">
+					<label class="col-md-2 col-sm-2">City </label>
+					<div class="col-md-10 col-sm-10">
+						<input type="text" name="city" class="form-control" ng-model="user.city" required>
+						<p ng-show="userForm.city.$invalid && userForm.city.$touched" class="help-block">City name is required.</p>
+					</div>
+				</div>
+				<div class="form-group col-md-12 col-sm-12" ng-class="{ 'has-error' : userForm.country.$invalid && userForm.country.$touched }">
+					<label class="col-md-2 col-sm-2">Country </label>
+					<div class="col-md-5 col-sm-5 ">
+						<select id="country" name="country" class="form-control" required></select>
+						<p ng-show="userForm.country.$invalid && userForm.country.$touched" class="help-block">Country name is required.</p>
+					</div>
+					<div class="col-md-5 col-sm-5"></div>
+				</div>
+				<div class="form-group col-md-12 col-sm-12" ng-class="{ 'has-error' : userForm.state.$invalid && userForm.state.$touched }">
+					<label class="col-md-2 col-sm-2">State </label>
+					<div class="col-md-5 col-sm-5 ">
+						<select name="state" id="state" class="form-control" required></select>
+						<p ng-show="userForm.state.$invalid && userForm.state.$touched" class="help-block">State name is required.</p>
+					</div>
+					<div class="col-md-5 col-sm-5"></div>
+				</div>
+				<div class="form-group col-md-12 col-sm-12" ng-class="{ 'has-error' : userForm.pin.$invalid && userForm.pin.$touched }">
+					<label class="col-md-2 col-sm-2">Pin Code </label>
+					<div class="col-md-5 col-sm-5">
+						<input type="text" name="pin" class="form-control" maxlength="6" ng-model="user.pin" pattern="^[A-Za-z0-9]{6}$" required>
+						<p ng-show="userForm.pin.$error.required && userForm.pin.$touched" class="help-block">Pin Code is required.</p>
+						<p ng-show="userForm.pin.$error.pattern && !userForm.pin.$pristine && !userForm.pin.$error.required" class="help-block">Pin length should be 6 characters.</p>
+					</div>		       
+
+
+				</div>
+				
+				<div class="col-sm-12 col-md-12">
+					<button type="submit" class="btn btn-success" style="float: right;" ng-disabled="userForm.$invalid">Proceed to Payment</button>
+
+				</form>
+
+
 			</div>
 		</div>
 	</div>

@@ -4,54 +4,59 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-        document.getElementById("up").style.display = "block";
-    } else {
-        document.getElementById("up").style.display = "none";
-    }
+	if (document.getElementById("up")!==null) {
+
+
+		if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+			document.getElementById("up").style.display = "block";
+		} else {
+			document.getElementById("up").style.display = "none";
+		}
+	}	
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
 }
 </script>
 <div>	
 	<div class="row promo-pic " >
 		<div class="col-md-12 text-center pic " style="padding: 0">
 			<div class="img-responsive"  id="promo-pic">
-			<img srcset="">
+				<img srcset="">
+			</div>
 		</div>
-	</div>
-	<div id="products" class="products row">
-		<div class="row" style="margin-bottom: 10px">
-			<h2 class="text-center col-md-12">Our Products </h2>
-		</div>
-		<div class="row">
-			<div class="items col-md-6 col-sm-6 col-xs-12" ng-repeat="product in products" data-ng-click="ShowItem()">
-				<h3 class="text-center col-md-12">{{product.productName}}</h3>
-				<div class="item-img col-md-6">
-					<picture class="img-responsive">
-  						<source media="(max-width: 567px)" ng-srcset="Images/Mobile/{{product.productId}}.png">
-  						<source media="(min-width: 768px)" ng-srcset="Images/Desktop/{{product.productId}}.png">
-  						<img ng-src="Images/Desktop/{{product.productId}}.png" alt="{{product.productName}} Image" >
-</picture>
-				</div>
-				<div class="item-desc col-md-6" ">
-					<label class="col-md-12 col-sm-12 col-xs-12" for="name">{{product.productName}} Hajj Bag</label>
-					<label class="col-md-12 col-sm-12 col-xs-12" for="price">Price: $1100</label>
-					<label class="col-md-4 col-xs-4"  for="quantity">Quantity:</label>
+		<div id="products" class="products row">
+			<div class="row" style="margin-bottom: 10px">
+				<h2 class="text-center col-md-12">Our Products </h2>
+			</div>
+			<div class="row">
+			<div class="items col-md-6 col-sm-6 col-xs-12" ng-repeat="product in products" data-ng-click="ShowItem(product)">
+					<h3 class="text-center col-md-12">{{product.productName}}</h3>
+					<div class="item-img col-md-6">
+						<picture class="">
+							<source media="(max-width: 567px)" ng-srcset="Images/Mobile/{{product.productId}}.png" class="img-responsive">
+								<source media="(min-width: 768px)" ng-srcset="Images/Desktop/{{product.productId}}.png" class="img-responsive">
+									<img class="img-responsive" ng-src="Images/Desktop/{{product.productId}}.png" alt="{{product.productName}} Image" >
+								</picture>
+							</div>
+							<div class="item-desc col-md-6" ">
+								<label class="col-md-12 col-sm-12 col-xs-12" for="name" style="font-size: 1.3em;">{{product.productName}} Hajj Bag</label>
+								<label class="col-md-12 col-sm-12 col-xs-12" for="price">Available for Men, Women and Children</label>
+					<!--<label class="col-md-4 col-xs-4"  for="quantity">Quantity:</label>
 					<div class="col-md-5 col-xs-4">
 						<input type="number" name="quantity" class="form-control" min="1" value="1">
 					</div>
-					<div class="col-md-3 col-xs-4" ></div>
-					<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 7px;">
+					<div class="col-md-3 col-xs-4" ></div> -->
+					<!-- <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 7px;">
 						<button class="btn btn-info	">Add to cart</button>
 						<button class="btn btn-success">Buy Now</button>
-					</div>
+					</div> -->
 					<label class="col-md-12 col-sm-12 col-xs-12" for="description">Description:</label>
-					<div class="col-md-12 col-sm-12 col-xs-12">This bag will contain all basic things which will be needful on Hajj trip.
+					<div class="col-md-12 col-sm-12 col-xs-12">{{product.productDesc}}
+						Click here to know more...
 					</div>
 				</div>
 			</div>
