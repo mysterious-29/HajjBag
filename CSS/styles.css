@@ -121,7 +121,13 @@ hr{
   float: right;
   display: none;
 }
-
+@media only screen and (max-width: 495px) {
+  #promo-pic {
+      background-image:url('../Images/Mobile/desert2.jpg');
+      width:100%;
+      height:350px;
+    }
+}
 
 @media only screen and (max-width: 767px) {
     .navbar *{
@@ -139,9 +145,9 @@ hr{
   text-align: center !important;
 }
 #promo-pic {
-      background-image:url('../Images/Mobile/desert2.jpg');
+      background-image:url('../Images/Desktop/desert2.jpg');
       width:100%;
-      height:550px;
+      height:400px;
     }
     
 }
